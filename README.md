@@ -48,7 +48,7 @@ OR just press 'cmd' + ',' a new tab will open.
 
 2.2) See the picture bellow and select as it is displayed
 
-[[https://github.com/caliari/terminalConfig/img/Terminal.png|alt=Terminal_png]]
+[[https://github.com/Calliari/terminalConfig/blob/master/img/Terminal.png|alt=Terminal_png]]
 
 NOW THE Terminal IS CUSTOMISED 'Caliari' style.
 

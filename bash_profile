@@ -1,4 +1,14 @@
-export PS1="\[\033[38;5;14m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;160m\]\w\[$(tput sgr0)\]\[\033[38;5;10m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# without git show branch
+#export PS1="\[\033[38;5;14m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;160m\]\w\[$(tput sgr0)\]\[\033[38;5;10m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+
+# with git show branch
+export PS1="\[\033[38;5;14m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;160m\]\w\[$(tput sgr0)\[\033[0;35m\]\$(parse_git_branch)\]\[\033[38;5;10m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+
+
 export CLICOLOR=1
 
 export LSCOLORS=ExFxBxDxDxEgEdAbAdAcAb
@@ -54,3 +64,18 @@ alias la='ls -A'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
+
+# ============ fucntion-server  alias ========
+function server_all { grep -h 'Host ' ~/.ssh/config.d/server.dev ~/.ssh/config.d/server.test ~/.ssh/config.d/server.release ~/.ssh/config.d/server.stage ~/.ssh/config.d/server.prod ~/.ssh/config.d/server.internal ; }
+
+# ============ Terraform alias ========
+alias tf='terraform'
+alias tf11='terraform_11'
+alias tf12='terraform_12'
+
+# ============ Vagrant alias ========
+alias vg='vagrant'
+
+# ============ Packer alias ========
+alias pck='packer'
+

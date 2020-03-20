@@ -1,17 +1,17 @@
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/';
+#    git branch 2>/dev/null | grep '^*' | colrm 1 2;
 }
 
-# without git show branch
 #export PS1="\[\033[38;5;14m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;160m\]\w\[$(tput sgr0)\]\[\033[38;5;10m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
-
-# with git show branch
-export PS1="\[\033[38;5;14m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;160m\]\w\[$(tput sgr0)\[\033[0;35m\]\$(parse_git_branch)\]\[\033[38;5;10m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
-
+# export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+export PS1="\[\033[38;5;14m\]\u\[$(tput sgr0)\]\[\033[31;5;15m\]\[\033[97m\]:\[\033[31m\]\w\[\033[35m\]\$(parse_git_branch)\[\033[92m\]$ \[\033[97m\]"
 
 export CLICOLOR=1
 
-export LSCOLORS=ExFxBxDxDxEgEdAbAdAcAb
+export LSCOLORS=gxFxBxDxDbEgEdAbAdAcAb
+
+
 
 # ============ For more information about the terminal colours and style see links bellow ===========================================
 # http://www.marinamele.com/2014/05/customize-colors-of-your-terminal-in-mac-os-x.html
@@ -19,6 +19,8 @@ export LSCOLORS=ExFxBxDxDxEgEdAbAdAcAb
 # http://osxdaily.com/2013/02/05/improve-terminal-appearance-mac-os-x/
 # http://www.marinamele.com/2014/05/customize-colors-of-your-terminal-in-mac-os-x.html
 # http://bashrcgenerator.com/
+# https://misc.flogisoft.com/bash/tip_colors_and_formatting
+# https://gist.github.com/leesei/136b522eb9bb96ba45bd
 
 # a black
 # b red
@@ -65,17 +67,28 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
 
-# ============ fucntion-server  alias ========
-function server_all { grep -h 'Host ' ~/.ssh/config.d/server.dev ~/.ssh/config.d/server.test ~/.ssh/config.d/server.release ~/.ssh/config.d/server.stage ~/.ssh/config.d/server.prod ~/.ssh/config.d/server.internal ; }
+# ============ gla-server  alias ========
+function gla_s { grep -h 'Host ' ~/.ssh/config.d/gla.dev ~/.ssh/config.d/gla.test ~/.ssh/config.d/gla.release ~/.ssh/config.d/gla.stage ~/.ssh/config.d/gla.prod ~/.ssh/config.d/gla.internal ; }
 
-# ============ Terraform alias ========
+# ============ Terraform cli alias ========
 alias tf='terraform'
 alias tf11='terraform_11'
 alias tf12='terraform_12'
-
-# ============ Vagrant alias ========
+# ============ Vagrant cli alias ========
 alias vg='vagrant'
 
-# ============ Packer alias ========
+# ============ Packer cli alias ========
 alias pck='packer'
 
+# ============ kubernetes-cli alias ========
+alias kb='kubectl'
+
+
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+# PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+# export PATH
+
+
+# export PATH=~/.local/bin:$PATH

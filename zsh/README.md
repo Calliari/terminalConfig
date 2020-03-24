@@ -10,9 +10,8 @@ To use this config file just clone this repo in the host  home directory,
 make sure you are in the host user home directory, just use the command:
 
 ```
-$ cd
+$ cd ~/
 ```
-
 
 ```
 $ git clone https://github.com/Calliari/terminalConfig.git
@@ -22,28 +21,46 @@ Now there is a folder called 'terminalConfig' in the user home directory, move a
 
 CHANGE DIRECTORY INTO 'terminalConfig' REPO AFTER CLONED FROM GitHub
 ```
-$ cd terminalConfig
+$ cd terminalConfig/zsh
 ```
 
-NOW MOVE THE FILE INTO THE USER HOME DIRECTORY
+Check the file `zshrc` with it's configuration, here we can customised alias, pluginsa and more...
 
-```
-$ mv bash_profile ~/.bash_profile
-```
+
+
+
 
 =============== =============== ========== ============== ============== ========
 
 
-2) Terminal Preferences
+2) Iterm2 Preferences (test the fonts)
+`echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699" `
 
-2.1)Click on Terminal on top left corner and select preferences.
-OR just press 'cmd' + ',' a new tab will open.
+If the output is the same as bellow its because we need to instal the fonts.
+ ±  ➦ ✘ ⚡ ⚙
 
-2.2) See the picture bellow and select as it is displayed
+To install the fonts:
+```
+cd /tmp/
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+rm -rf fonts
 
-![Terminal_png](https://github.com/Calliari/terminalConfig/blob/master/img/Terminal.png)
+```
+
+Click on Iterm2 --> Preferences --> Profiles --> `Font`; select [Inconsolata for Powerline]
+Click on Iterm2 --> Preferences --> Profiles --> `Non-ASCII Font`; select [Inconsolata for Powerline]
+
+Test the fonts again now. All symbols should be displaying now...
+`echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699" `
+
+Reload the the iterm2 with the new confi and symbos
+`source ~/.zshrc`
 
 
-NOW THE Terminal IS CUSTOMISED 'Caliari' style.
+
+
+NOW THE Iterm2 IS CUSTOMISED 'Caliari' style.
 
 END

@@ -54,7 +54,7 @@ Click on Iterm2 --> Preferences --> Profiles --> `Non-ASCII Font`; select [Incon
 
 2.2) See the picture bellow and select as it is displayed
 
-![Terminal_png](https://github.com/Calliari/terminalConfig/blob/master/zsh/img/Screenshot_iterm_2config_font.png
+![Terminal_png](https://github.com/Calliari/terminalConfig/blob/master/zsh/img/Screenshot_iterm_2config_font.png)
 
 Test the fonts again now. All symbols should be displaying now...
 `echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699" `

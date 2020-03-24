@@ -1,5 +1,5 @@
 # Description
-This is my "Terminal" configuration file for colours and style
+This is my "Terminal" configuration file for colours and style with iterm2
 
 
 # Instructions how to setup
@@ -13,21 +13,14 @@ make sure you are in the host user home directory, just use the command:
 $ cd
 ```
 
-If there is a file called '.bash_profile' this configuration can be copied from this repo from the 'bash_profile' file using coping and pasteing.
-
-OR
-
-This can be done by cloning the repo wit the command bellow on the user home directory;
-
-!!!THESE STEPS WILL REPLACE THE ORIGINAL '.bash_profile' FILE FROM YOUR MACHINE!!!
 
 ```
 $ git clone https://github.com/Calliari/terminalConfig.git
 ```
 
-Now there is a folder called '' in the user home directory, move and rename the file the file with these steps:
+Now there is a folder called 'terminalConfig' in the user home directory, move and rename the file the file with these steps:
 
-CHANGE DIRECTORY INTO '' REPO AFTER CLONED FROM GitHub
+CHANGE DIRECTORY INTO 'terminalConfig' REPO AFTER CLONED FROM GitHub
 ```
 $ cd terminalConfig
 ```

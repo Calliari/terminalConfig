@@ -16,3 +16,4 @@ NOW MOVE THE FILE INTO THE USER HOME DIRECTORY
 ```
 $ mv ~/bachrc ~/bash_bkp.txt
 $ cat bachrc > ~/bachrc
+$ exec $SHELL

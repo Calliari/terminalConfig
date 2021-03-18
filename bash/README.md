@@ -36,6 +36,7 @@ NOW MOVE THE FILE INTO THE USER HOME DIRECTORY
 
 ```
 $ mv bash_profile ~/.bash_profile
+$ exec $SHELL
 ```
 
 =============== =============== ========== ============== ============== ========

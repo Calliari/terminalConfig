@@ -1,7 +1,6 @@
 # Description
 This is my "Terminal" configuration file for colours and style with iterm2
 
-
 # Instructions how to setup
 
 1) Terminal configuration
@@ -21,13 +20,13 @@ Now there is a folder called 'terminalConfig' in the user home directory, move a
 
 CHANGE DIRECTORY INTO 'terminalConfig' REPO AFTER CLONED FROM GitHub
 ```
-$ cd terminalConfig/zsh
+$ cp terminalConfig/zsh/zshrc ~/.zshrc
 ```
 
-Check the file `zshrc` with it's configuration, here we can customised alias, pluginsa and more...
+Check the file `.zshrc` with it's configuration, here we can customised alias, plugins and and more...
 
-
-
+# resource
+https://github.com/ohmyzsh/ohmyzsh
 
 
 =============== =============== ========== ============== ============== ========

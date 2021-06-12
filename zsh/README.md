@@ -9,18 +9,10 @@ To use this config file just clone this repo in the host  home directory,
 make sure you are in the host user home directory, just use the command:
 
 ```
-$ cd ~/
-```
-
-```
-$ git clone https://github.com/Calliari/terminalConfig.git
-```
-
-Now there is a folder called 'terminalConfig' in the user home directory, move and rename the file the file with these steps:
-
-CHANGE DIRECTORY INTO 'terminalConfig' REPO AFTER CLONED FROM GitHub
-```
-$ cp terminalConfig/zsh/zshrc ~/.zshrc
+# https://github.com/ohmyzsh/ohmyzsh
+cd ~/tmp/
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh ~/tmp/install.sh
 ```
 
 Check the file `.zshrc` with it's configuration, here we can customised alias, plugins and and more...
@@ -31,6 +23,7 @@ https://github.com/ohmyzsh/ohmyzsh
 
 =============== =============== ========== ============== ============== ========
 
+In case fonts are missing...
 
 2) Iterm2 Preferences (test the fonts)
 `echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699" `
@@ -60,8 +53,6 @@ Test the fonts again now. All symbols should be displaying now...
 
 Reload the the iterm2 with the new confi and symbos
 `source ~/.zshrc`
-
-
 
 
 NOW THE Iterm2 IS CUSTOMISED 'Caliari' style.

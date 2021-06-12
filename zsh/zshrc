@@ -5,7 +5,7 @@ autoload -Uz compinit && compinit
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/$USER/.oh-my-zsh"
+export ZSH="/Users/$USER/.zshrc"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -72,9 +72,20 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+# Example on hoe to enable plugins
+# Note that the plugins are separated by whitespace (spaces, tabs, new lines...). Do not use commas between them or it will break.
+#plugins=(
+#  git
+#  bundler
+#  dotenv
+#  osx
+#  rake
+#  rbenv
+#  ruby
+#)
+
+source $ZSH
 
 # User configuration
 

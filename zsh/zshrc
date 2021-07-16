@@ -114,10 +114,14 @@ source $ZSH
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # ============ Alias custom configuration "copied from linux style alias"
-alias l='ls -CF'
-alias ll='ls -lsaF'
-alias la='ls -A'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
+
+alias l='ls -CF'
+alias ll='ls -lsaF'
+alias la='ls -A'
+alias vg='vagrant'
+alias pck='packer'
+alias tf='terraform'
 

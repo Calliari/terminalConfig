@@ -1,0 +1,24 @@
+# PATH
+export PATH"=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/USERNAME-HERE/bin"
+
+# ============ fucntion custom configuration
+#Create a  '~/.zprofile'  and add the fucntion
+mktouch() { 
+  # usage mktouch /tmp/test/path/text.txt
+  mkdir -p $(dirname $1) && touch $1; 
+} 
+
+sts () {
+  [[ $# -le 1 ]] || { print 'Usage: sts [PROFILE]\n' >&2; return 1; }
+  eval "$(~/bin/sts.sh ${1:-${AWS_PROFILE}} ${2})"
+}
+
+sts2 () {
+  [[ "$#" -eq 2 ]] || { print 'Usage: sts2 [PROFILE] [MFA-token]\n' >&2; return 1; }
+  eval "$(~/bin/sts2.sh ${1:-${AWS_PROFILE}} ${2})"
+}
+
+sts3 () {
+  ~/bin/sts2.sh ${1:-${AWS_PROFILE}} ${2} > ~/.envrc-${1:-${AWS_PROFILE}}
+   source ~/.envrc-${1:-${AWS_PROFILE}}
+}

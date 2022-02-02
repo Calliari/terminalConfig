@@ -125,3 +125,11 @@ alias vg='vagrant'
 alias pck='packer'
 alias tf='terraform'
 
+# its from  brew install mysql-client
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/mysql-client/lib"
+export CPPFLAGS="-I/usr/local/opt/mysql-client/include"
+
+## For example: autocomplete, this is a templete - this will prompt ['dev-env', 'uat-env' or 'prod-env'] when the commands starts with 'echo'
+#complete -o default -W "dev-env uat-env prod-env" echo;
+

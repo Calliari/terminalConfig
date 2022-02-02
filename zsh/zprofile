@@ -1,5 +1,7 @@
 # PATH
 export PATH"=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/USERNAME-HERE/bin"
+#export PATH"=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/USERNAME-HERE/bin:/usr/local/go/bin"
+#export PATH"=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/USERNAME-HERE/bin:/usr/local/bin/go"
 
 # ============ fucntion custom configuration
 #Create a  '~/.zprofile'  and add the fucntion

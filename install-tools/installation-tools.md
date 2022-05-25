@@ -6,7 +6,7 @@ Install Homebrew "MAC package management"
 # Homebrew for Apple Silicon M1 BIN
 /opt/homebrew/bin/brew
 
-setting up the brew for Apple Silicon M1
+# Setting up the brew for Apple Silicon M1
 ECHO 'export PATH=/opt/homebrew/bin:$PATH' >> ~/.zshrc
 
 # Load the changes

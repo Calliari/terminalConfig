@@ -8,6 +8,12 @@ ln -s /opt/homebrew/bin/brew /usr/local/bin/
 
 # Test the brew cmd
 brew --version
+
+
+not sure about this
+sudo mkdir -p /usr/local/var/homebrew
+sudo chown -R $(whoami) /usr/local/var/homebrew
+
 ```
 
 Install Iterm2 "custom terminal cool with "

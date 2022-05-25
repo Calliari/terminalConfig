@@ -49,11 +49,18 @@ Install Chrome
 https://www.google.co.uk/chrome/thank-you.html?installdataindex=empty&statcb=0&defaultbrowser=0&brand=YTUH
 ```
 
+Install Postman
+```
+https://www.postman.com/downloads/
+```
 
 Installaton of tools with package management:
 ```
 # tfenv for terraform version installation
 brew install tfenv
+tfenv install 1.2.1
+tfenv use 1.2.1
+terraform --version
 
 # kubectl kubernetes command line interface CLI
 brew install kubectl

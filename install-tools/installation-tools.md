@@ -2,6 +2,12 @@ Install Homebrew "MAC package management"
 ```
 # https://brew.sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+cd /usr/local/bin
+ln -s /opt/homebrew/bin/brew /usr/local/bin/
+
+# Test the brew cmd
+brew --version
 ```
 
 Install Iterm2 "custom terminal cool with "

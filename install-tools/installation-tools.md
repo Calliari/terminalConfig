@@ -3,17 +3,18 @@ Install Homebrew "MAC package management"
 # https://brew.sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-cd /usr/local/bin
-ln -s /opt/homebrew/bin/brew /usr/local/bin/
+# Homebrew for Apple Silicon M1 BIN
+/opt/homebrew/bin/brew
+
+setting up the brew for Apple Silicon M1
+ECHO 'export PATH=/opt/homebrew/bin:$PATH' >> ~/.zshrc
+
+# Load the changes
+source ~/.zshrc
 
 # Test the brew cmd
 brew --version
-
-
-not sure about this
-sudo mkdir -p /usr/local/var/homebrew
-sudo chown -R $(whoami) /usr/local/var/homebrew
-
+brew --help
 ```
 
 Install Iterm2 "custom terminal cool with "

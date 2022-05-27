@@ -25,6 +25,12 @@ Install Iterm2 "custom terminal cool with "
 Install codeVS "Code editing"
 ```
 https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal
+
+### Open code from the terminal
+# Launch VS Code, Open the Command Palette (Cmd+Shift+P) and type 'shell command' to find the Shell Command: 
+# Install 'code' command in PATH command.
+# Now test the cmd from the terminal:
+code test.txt
 ```
 
 Install kubectl (Intel)

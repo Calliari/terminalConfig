@@ -1,3 +1,10 @@
+Show hidden files on MAC - open the terminal and:
+```
+open ~/
+press (Command + Shift + Period)
+# Done, Show hidden files is now ENABLED.  
+```
+
 Install Homebrew "MAC package management" 
 ```
 # https://brew.sh

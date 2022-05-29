@@ -78,6 +78,7 @@ terraform --version
 Installaton vagrant for Virtual machines
 ```
 brew install --cask vagrant
+vagrant -v
 ```
 
 # kubectl kubernetes command line interface CLI

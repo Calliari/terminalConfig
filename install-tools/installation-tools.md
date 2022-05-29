@@ -1,3 +1,10 @@
+https://support.apple.com/en-gb/HT211861
+Install Rosetta 2 enables a Mac with Apple silicon to use apps built for a Mac with an Intel processor
+```
+# OPtion "agree to license" to install without pront 
+/usr/sbin/softwareupdate --install-rosetta  --agree-to-license
+```
+
 Show hidden files on MAC - open the terminal and:
 ```
 open ~/

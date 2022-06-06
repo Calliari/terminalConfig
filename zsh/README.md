@@ -64,6 +64,12 @@ Customised the prompt now from `vim ~/.oh-my-zsh/themes/agnoster.zsh-theme` and 
 prompt_segment black default "%(!.%{%F{yellow}%}.)%{$fg[red]%}%n⚡️"
 ```
 
+Customised the prompt by replace the file:
+```
+mv ~/.oh-my-zsh/themes/agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme.bkp 
+cp  agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
+```
+
 Reload the the iterm2 with the new confi and symbos
 `source ~/.zshrc`
 

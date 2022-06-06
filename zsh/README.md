@@ -68,7 +68,7 @@ Reload the the iterm2 with the new confi and symbos
 `source ~/.zshrc`
 
 
-2.3) Set the size of the terminal windown: Click on Iterm2 --> Preferences --> Windown [Columns:260 - Rows 65]
+2.3) Set the size of the terminal windown: Click on Iterm2 --> Preferences --> Windown [`Columns:260` - `Rows 65`]
 
 NOW THE Iterm2 IS CUSTOMISED with "my-agnoster" style.
 

@@ -17,13 +17,6 @@ sh ~/tmp/install.sh
 
 Check the file `.zshrc` with it's configuration, here we can customised alias, plugins and and more...
 
-Calliari style: 
-```
-vim  ~/.zshrc # check --> ZSH_THEME="agnoster"
-source ~/.zshrc
-
-
-```
 
 # resource
 https://github.com/ohmyzsh/ohmyzsh

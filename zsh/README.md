@@ -59,11 +59,6 @@ Click on Iterm2 --> Preferences --> Profiles --> `Non-ASCII Font`; select [Incon
 Test the fonts again now. All symbols should be displaying now...
 `echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699" `
 
-Customised the prompt now from `vim ~/.oh-my-zsh/themes/agnoster.zsh-theme` and comment the line 92 `prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"` then add a new one below:
-```
-prompt_segment black default "%(!.%{%F{yellow}%}.)%{$fg[red]%}%n⚡️"
-```
-
 Customised the prompt by replace the file:
 ```
 mv ~/.oh-my-zsh/themes/agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme.bkp 

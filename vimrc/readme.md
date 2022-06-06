@@ -14,5 +14,5 @@ $ cd terminalConfig/vimrc
 NOW MOVE THE FILE INTO THE USER HOME DIRECTORY
 
 ```
-$ mv ~/vimrc ~/vimrc_bkp.txt
-$ cat vimrc > ~/vimrc
+$ mv ~/.vimrc ~/.vimrc_bkp.txt
+$ cat vimrc > ~/.vimrc

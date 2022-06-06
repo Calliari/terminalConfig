@@ -62,16 +62,19 @@ Test the fonts again now. All symbols should be displaying now...
 Customised the prompt by replace the file:
 ```
 cd /tmp/ && git clone https://github.com/Calliari/terminalConfig.git
+cp /tmp/terminalConfig/zsh/my-agnoster.zsh-theme ~/.oh-my-zsh/themes/my-agnoster.zsh-theme
 
-mv ~/.oh-my-zsh/themes/agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme.bkp 
-cp /tmp/terminalConfig/zsh/my-agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
+# set the theme now
+sed s/'ZSH_THEME="robbyrussell"'/'# ZSH_THEME="robbyrussell"'/ ~/.zshrc
+
+vim ~/.zshrc # add an line to use theme now
+ZSH_THEME="my-agnoster"
 ```
 
 Reload the the iterm2 with the new confi and symbos
 `source ~/.zshrc`
 
 
-
-NOW THE Iterm2 IS CUSTOMISED 'Caliari' style.
+NOW THE Iterm2 IS CUSTOMISED with "my-agnoster" style.
 
 END

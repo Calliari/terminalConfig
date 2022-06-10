@@ -81,6 +81,7 @@ brew install tfenv
 tfenv install 1.2.1
 tfenv use 1.2.1
 terraform --version
+```
 
 Installaton vagrant for Virtual machines
 ```
@@ -88,7 +89,8 @@ brew install --cask vagrant
 vagrant -v
 ```
 
-# kubectl kubernetes command line interface CLI
+kubectl kubernetes command line interface CLI
+```
 brew install kubectl
 ```
 

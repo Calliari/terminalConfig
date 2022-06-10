@@ -72,4 +72,9 @@ Reload the the iterm2 with the new confi and symbos
 
 NOW THE Iterm2 IS CUSTOMISED with "my-agnoster" style.
 
+3) For custom commands use the ".zprofile" - for example;
+```
+echo "alias tf='terraform'" >> ~/.zprofile
+```
+
 END

@@ -3,7 +3,7 @@ export PATH"=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
 #export PATH"=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/USERNAME-HERE/bin:/usr/local/go/bin"
 #export PATH"=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/USERNAME-HERE/bin:/usr/local/bin/go"
 
-# ============ fucntion custom configuration
+# ======================== fucntion custom configuration
 #Create a  '~/.zprofile'  and add the fucntion
 mktouch() { 
   # usage mktouch /tmp/test/path/text.txt
@@ -24,3 +24,8 @@ sts3 () {
   ~/bin/sts2.sh ${1:-${AWS_PROFILE}} ${2} > ~/.envrc-${1:-${AWS_PROFILE}}
    source ~/.envrc-${1:-${AWS_PROFILE}}
 }
+
+======================== alias 
+alias tf='terraform'
+alias vg='vagrant'
+alias pck='packer'

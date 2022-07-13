@@ -74,7 +74,7 @@ Install Postman
 https://www.postman.com/downloads/
 ```
 
-Installaton of tools with package management:
+### Installaton of tools with package management:
 
 #### tfenv for terraform version installation
 ```

@@ -75,6 +75,8 @@ https://www.postman.com/downloads/
 ```
 
 Installaton of tools with package management:
+
+#### tfenv for terraform version installation
 ```
 # tfenv for terraform version installation
 brew install tfenv
@@ -83,13 +85,13 @@ tfenv use 1.2.1
 terraform --version
 ```
 
-Installaton vagrant for Virtual machines
+#### Installaton vagrant for Virtual machines
 ```
 brew install --cask vagrant
 vagrant -v
 ```
 
-kubectl kubernetes command line interface CLI
+#### kubectl kubernetes command line interface CLI
 ```
 brew install kubectl
 ```

@@ -96,5 +96,15 @@ vagrant -v
 brew install kubectl
 ```
 
+#### pyenv for python version installation
+```
+brew install pyenv
+pyenv global 2.7.18
+echo 'PATH=/Users/$USER/.pyenv/shims/:$PATH' >> ~/.zprofile
+source ~/.zprofile
 
+# Test binaries
+/Users/$USER/.pyenv/shims/python --version
+/Users/$USER/.pyenv/shims/pip --version
+```
 

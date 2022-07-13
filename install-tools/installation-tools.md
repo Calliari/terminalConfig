@@ -103,7 +103,7 @@ pyenv global 2.7.18
 echo 'PATH=/Users/$USER/.pyenv/shims/:$PATH' >> ~/.zprofile
 source ~/.zprofile
 
-# Test binaries
+# Test the binaries
 /Users/$USER/.pyenv/shims/python --version
 /Users/$USER/.pyenv/shims/pip --version
 ```

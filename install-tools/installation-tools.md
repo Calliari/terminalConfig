@@ -94,6 +94,7 @@ vagrant -v
 #### kubectl kubernetes command line interface CLI
 ```
 brew install kubectl
+kubectl version
 ```
 
 #### pyenv for python version installation

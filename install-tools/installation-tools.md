@@ -36,7 +36,7 @@ Install Iterm2 "custom terminal cool with "
 # open https://iterm2.com 
 ```
 
-Install codeVS "Code editing"
+Install VS-code "Code editing"
 ```
 https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal
 

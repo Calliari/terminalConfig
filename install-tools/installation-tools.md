@@ -43,7 +43,7 @@ https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal
 ### Open code from the terminal
 # Launch VS Code, Open the Command Palette (Cmd+Shift+P) and type 'shell command' to find the Shell Command: 
 # Install 'code' command in PATH command.
-# Plugins: ["GitLens — Git supercharged", ]
+# Extensions: ["GitLens — Git supercharged", ]
 # Now test the cmd from the terminal:
 code test.txt
 ```

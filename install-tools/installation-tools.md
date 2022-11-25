@@ -86,6 +86,12 @@ tfenv use 1.2.1
 terraform --version
 ```
 
+#### Installaton jq (https://formulae.brew.sh/formula/jq)
+```
+brew install jq
+jq --version
+```
+
 #### Installaton vagrant for Virtual machines
 ```
 brew install --cask vagrant

@@ -1,3 +1,9 @@
+Install the "Xcode toolkit" or reset if is already installed
+```
+# xcode-select --install
+# sudo xcode-select --reset
+```
+
 https://support.apple.com/en-gb/HT211861
 Install Rosetta 2 enables a Mac with Apple silicon to use apps built for a Mac with an Intel processor
 ```
@@ -115,4 +121,6 @@ source ~/.zprofile
 /Users/$USER/.pyenv/shims/python --version
 /Users/$USER/.pyenv/shims/pip --version
 ```
+
+
 

@@ -71,10 +71,16 @@ export PATH=$HOME/bin:$PATH
 # get current branch in git repo
 function parse_git_branch() {
   BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
-  if [[ ! "${BRANCH}" == "" ]]
+  if [[ ! "${BRANCH}" == "" &&  "${BRANCH}" = "master" ]]
   then
     STAT=`parse_git_dirty`
-    echo "[${BRANCH}${STAT}]"
+    BRANCH_COLOR="{red}"
+    echo "[%B%F${BRANCH_COLOR}${BRANCH}${STAT}%b%f]"
+  elif [[ ! "${BRANCH}" == "" ]]
+  then
+    STAT=`parse_git_dirty`
+    BRANCH_COLOR="{green}"
+    echo "[%B%F${BRANCH_COLOR}${BRANCH}${STAT}%b%f]"
   else
     echo ""
   fi
@@ -116,10 +122,10 @@ function parse_git_dirty() {
 }
 
 # TEST prompt 
-# print -P '%B%F{208}% %n%f%b %F{blue}%~:%f $(parse_git_branch)%(!.#.$) '
+# print -P '%B%F{208}%b%f 🐺 %F{#C0C0C0}%~%f $(parse_git_branch)%(!.#.%B%F{#FFFFFF}$%b%f) '
 
 setopt PROMPT_SUBST
-PS1='%B%F{208}% %n%f%b %F{blue}%~:%f $(parse_git_branch)%(!.#.$) '
+PS1='%B%F{208}%b%f 🐺 %F{#C0C0C0}%~%f $(parse_git_branch)%(!.#.%B%F{#FFFFFF}$%b%f) '
 EOF
 ```
 

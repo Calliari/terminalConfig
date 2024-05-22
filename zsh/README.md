@@ -1,80 +1,154 @@
 # Description
-This is my "Terminal" configuration file for colours and style with iterm2
 
-# Instructions how to setup
+This is my "Terminal" configuration file for colours and style without iterm2
+
+## Instructions how to setup
 
 1) Terminal configuration
 
 To use this config file just clone this repo in the host  home directory,
 make sure you are in the host user home directory, just use the command:
 
+Install additional tools with - Homebrew: https://brew.sh/
+
 ```
-# https://github.com/ohmyzsh/ohmyzsh
-cd ~/tmp/
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sh ~/tmp/install.sh
+# install tmux: https://formulae.brew.sh/formula/tmux#default
+brew install tmux
 ```
+
+2)Terminal Preferences "profile"
+
+Configuring the seze of the screen. (Click terminal top left corner and select preferences > settings > window) OR just press 'cmd' + ',' a new tab will open.
+ 2.1 Select the style "Pro" press default to select this style
+ 2.2 Text Tab - Font Monaco 10
+ 2.3 Window tab - click "Path" tick box, Columns:265 rows:65
+ 2.4 
+
+See the picture bellow and select as it is displayed:
+![Terminal_png](https://github.com/Calliari/terminalConfig/blob/master/zsh/img/Terminal.png)
 
 Check the file `.zshrc` with it's configuration, here we can customised alias, plugins and and more...
 
-
-# resource
-https://github.com/ohmyzsh/ohmyzsh
-
-
-=============== =============== ========== ============== ============== ========
-
-In case fonts are missing...
-
-2) Iterm2 Preferences (test the fonts)
-`echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699" `
-
-If the output is the same as bellow its because we need to instal the fonts.
- ±  ➦ ✘ ⚡ ⚙
-
-To install the fonts:
+First we are just add the configuration setting on the `` to be load by another files `~/.zprofile` and or `~/.zprofile_terminal`
 ```
-cd /tmp/
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
-rm -rf fonts
+## Setting up the calling for ".profile"
+cp ~/.zshrc ~/.zshrc.bkp
+cat << 'EOF' | tee ~/.zshrc
+###   ###
+   ###
+# This is my own config changes "Author Osvaldo"
+if [ -f ~/.zprofile ]; then
+    . ~/.zprofile
+fi
 
+###   ###
+   ###
+# This is my own config changes "Author Osvaldo" on the terminal
+if [ -f ~/.zprofile_terminal ]; then
+    . ~/.zprofile_terminal
+fi
+EOF
 ```
 
-Click on Iterm2 --> Preferences --> Profiles --> `Font`; select [Inconsolata for Powerline]
-Click on Iterm2 --> Preferences --> Profiles --> `Non-ASCII Font`; select [Inconsolata for Powerline]
-
-2.2) See the picture bellow and select as it is displayed
-
-![Terminal_png](https://github.com/Calliari/terminalConfig/blob/master/zsh/img/Screenshot_iterm_2config_font.png)
-
-Test the fonts again now. All symbols should be displaying now...
-`echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699" `
-
-Customised the prompt by replace the file:
+#### On the `~/.zprofile` add the configuration how it would look like `prompt`;
 ```
-cd /tmp/ && git clone https://github.com/Calliari/terminalConfig.git
-cp /tmp/terminalConfig/zsh/my-agnoster.zsh-theme ~/.oh-my-zsh/themes/my-agnoster.zsh-theme
+cat << 'EOF' | tee ~/.zprofile
+# vim: ft=sh
 
-# set the theme now
-sed s/'ZSH_THEME="robbyrussell"'/'# ZSH_THEME="robbyrussell"'/ ~/.zshrc
+# No brainer, default to Vim
+export EDITOR="vim"
 
-vim ~/.zshrc # add an line to use theme now
-ZSH_THEME="my-agnoster"
+# Color LS output to differentiate between directories and files
+export LS_OPTIONS="--color=auto"
+export CLICOLOR="Yes"
+export LSCOLOR=""
+
+# Customize Path
+export PATH=$HOME/bin:$PATH
+
+# get current branch in git repo
+function parse_git_branch() {
+  BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+  if [[ ! "${BRANCH}" == "" ]]
+  then
+    STAT=`parse_git_dirty`
+    echo "[${BRANCH}${STAT}]"
+  else
+    echo ""
+  fi
+}
+
+# get current GIT_STATUS of git repo
+function parse_git_dirty() {
+  GIT_STATUS=`git status 2>&1 | tee`
+  dirty=`echo -n "${GIT_STATUS}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$?"`
+  untracked=`echo -n "${GIT_STATUS}" 2> /dev/null | grep "Untracked files" &> /dev/null; echo "$?"`
+  ahead=`echo -n "${GIT_STATUS}" 2> /dev/null | grep "Your branch is ahead of" &> /dev/null; echo "$?"`
+  newfile=`echo -n "${GIT_STATUS}" 2> /dev/null | grep "new file:" &> /dev/null; echo "$?"`
+  renamed=`echo -n "${GIT_STATUS}" 2> /dev/null | grep "renamed:" &> /dev/null; echo "$?"`
+  deleted=`echo -n "${GIT_STATUS}" 2> /dev/null | grep "deleted:" &> /dev/null; echo "$?"`
+  bits=''
+  if [[ "${renamed}" == "0" ]]; then
+    bits=">${bits}"
+  fi
+  if [[ "${ahead}" == "0" ]]; then
+    bits="*${bits}"
+  fi
+  if [[ "${newfile}" == "0" ]]; then
+    bits="+${bits}"
+  fi
+  if [[ "${untracked}" == "0" ]]; then
+    bits="?${bits}"
+  fi
+  if [[ "${deleted}" == "0" ]]; then
+    bits="x${bits}"
+  fi
+  if [[ "${dirty}" == "0" ]]; then
+    bits="!${bits}"
+  fi
+  if [[ ! "${bits}" == "" ]]; then
+    echo " ${bits}"
+  else
+    echo ""
+  fi
+}
+
+# TEST prompt 
+# print -P '%B%F{208}% %n%f%b %F{blue}%~:%f $(parse_git_branch)%(!.#.$) '
+
+setopt PROMPT_SUBST
+PS1='%B%F{208}% %n%f%b %F{blue}%~:%f $(parse_git_branch)%(!.#.$) '
+EOF
 ```
 
-Reload the the iterm2 with the new confi and symbos
-`source ~/.zshrc`
-
-
-2.3) Set the size of the terminal windown: Click on Iterm2 --> Preferences --> Windown [`Columns:260` - `Rows 65`]
-
-NOW THE Iterm2 IS CUSTOMISED with "my-agnoster" style.
-
-3) For custom commands use the ".zprofile" - for example;
+#### On the `~/.zprofile_terminal` add the configuration for tools, alias and etc;
 ```
-echo "alias tf='terraform'" >> ~/.zprofile
-```
+cat << 'EOF' | tee ~/.zprofile_terminal
+alias ll='ls -l'
+alias k='kubectl'
+alias tf='terraform'
+alias vg='vagrant'
+alias ebsa="cd /Users/$USER/devOps/EBSA/git"
 
-END
+mktouch() {
+  # usage mktouch /tmp/test/path/text.txt
+  mkdir -p $(dirname $1) && touch $1;
+}
+
+# this is where homebrew install the binaries 
+PATH=/opt/homebrew/bin:$PATH
+
+# setup autocomplete in zsh into the current shell
+autoload -Uz compinit && compinit && source <(kubectl completion zsh)
+
+
+# pyenv env
+PATH="$HOME/.pyenv/shims:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+# Setting PATH for Python 3.11
+# The original version is saved in .zprofile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
+EOF
+```

@@ -9,7 +9,7 @@ This is my "Terminal" configuration file for colours and style without iterm2
 To use this config file just clone this repo in the host  home directory,
 make sure you are in the host user home directory, just use the command:
 
-Install additional tools with - Homebrew: https://brew.sh/
+Install additional tools with - Homebrew: <https://brew.sh/>
 
 ```
 # install tmux: https://formulae.brew.sh/formula/tmux#default
@@ -22,7 +22,7 @@ Configuring the seze of the screen. (Click terminal top left corner and select p
  2.1 Select the style "Pro" press default to select this style
  2.2 Text Tab - Font Monaco 10
  2.3 Window tab - click "Path" tick box, Columns:265 rows:65
- 2.4 
+ 2.4
 
 See the picture bellow and select as it is displayed:
 ![Terminal_png](https://github.com/Calliari/terminalConfig/blob/master/zsh/img/Terminal.png)
@@ -30,6 +30,7 @@ See the picture bellow and select as it is displayed:
 Check the file `.zshrc` with it's configuration, here we can customised alias, plugins and and more...
 
 First we are just add the configuration setting on the `` to be load by another files `~/.zprofile` and or `~/.zprofile_terminal`
+
 ```
 ## Setting up the calling for ".profile"
 cp ~/.zshrc ~/.zshrc.bkp
@@ -50,7 +51,8 @@ fi
 EOF
 ```
 
-#### On the `~/.zprofile` add the configuration how it would look like `prompt`;
+#### On the `~/.zprofile` add the configuration how it would look like `prompt`
+
 ```
 cat << 'EOF' | tee ~/.zprofile
 # vim: ft=sh
@@ -121,7 +123,8 @@ PS1='%B%F{208}% %n%f%b %F{blue}%~:%f $(parse_git_branch)%(!.#.$) '
 EOF
 ```
 
-#### On the `~/.zprofile_terminal` add the configuration for tools, alias and etc;
+####  On the `~/.zprofile_terminal` add the configuration for tools, alias and etc
+
 ```
 cat << 'EOF' | tee ~/.zprofile_terminal
 alias ll='ls -l'

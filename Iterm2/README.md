@@ -24,12 +24,10 @@ https://github.com/ohmyzsh/ohmyzsh
 
 =============== =============== ========== ============== ============== ========
 
-In case fonts are missing...
-
-2) Iterm2 Preferences (test the fonts)
+2) Test the fonts 
 `echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699" `
 
-If the output is the same as bellow its because we need to instal the fonts.
+In case fonts are missing the output is the same as bellow its because we need to instal the fonts.
  ±  ➦ ✘ ⚡ ⚙
 
 To install the fonts:
@@ -39,11 +37,14 @@ git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
 ./install.sh
 rm -rf fonts
-
 ```
+- Click on Terminal or  Iterm2 --> Preferences --> Profiles --> `Font`; select [Inconsolata for Powerline]
+- Click on Iterm2 --> Preferences --> Profiles --> `Non-ASCII Font`; select [Inconsolata for Powerline]
 
-Click on Iterm2 --> Preferences --> Profiles --> `Font`; select [Inconsolata for Powerline]
-Click on Iterm2 --> Preferences --> Profiles --> `Non-ASCII Font`; select [Inconsolata for Powerline]
+Run the commands to reload the terminal with the fonts installed;
+```
+source ~/.zshrc
+```
 
 2.2) See the picture bellow and select as it is displayed
 

@@ -63,7 +63,7 @@ export EDITOR="vim"
 # Color LS output to differentiate between directories and files
 export LS_OPTIONS="--color=auto"
 export CLICOLOR="Yes"
-export LSCOLOR=""
+export LSCOLORS="GxFxCxDxBxegedabagaced"
 
 # Customize Path
 export PATH=$HOME/bin:$PATH
@@ -74,12 +74,12 @@ function parse_git_branch() {
   if [[ ! "${BRANCH}" == "" &&  "${BRANCH}" = "master" ]]
   then
     STAT=`parse_git_dirty`
-    BRANCH_COLOR="{red}"
+    BRANCH_COLOR="{009}"
     echo "[%B%F${BRANCH_COLOR}${BRANCH}${STAT}%b%f]"
   elif [[ ! "${BRANCH}" == "" ]]
   then
     STAT=`parse_git_dirty`
-    BRANCH_COLOR="{green}"
+    BRANCH_COLOR="{010}"
     echo "[%B%F${BRANCH_COLOR}${BRANCH}${STAT}%b%f]"
   else
     echo ""
@@ -125,7 +125,8 @@ function parse_git_dirty() {
 # print -P '%B%F{208}%b%f 🐺 %F{#C0C0C0}%~%f $(parse_git_branch)%(!.#.%B%F{#FFFFFF}$%b%f) '
 
 setopt PROMPT_SUBST
-PS1='%B%F{208}%b%f 🐺 %F{#C0C0C0}%~%f $(parse_git_branch)%(!.#.%B%F{#FFFFFF}$%b%f) '
+bindkey -e # reverse-i-search (crt + r)
+PS1='%B%F{208}%b%f 🐺 %F{014}%~%f $(parse_git_branch)%(!.#.%B%F{015}$%b%f) '
 EOF
 ```
 

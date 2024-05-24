@@ -10,8 +10,18 @@ cat << 'EOF' | tee -a ~/.zshrc
 if [ -f ~/.zprofile ]; then
     . ~/.zprofile
 fi
+EOF
+```
 
-#### setup autocomplete in zsh into the current shell
+### Creating the `.zprofile`file with customised looking for the terminal
+```
+cp ~/.zprofile ~/.zprofile.backup; cat << 'EOF' | tee ~/.zprofile
+# vim: ft=sh
+
+# No brainer, default to Vim
+export EDITOR="vim"
+
+#### if kubectl is in used - setup autocomplete in zsh into the current shell
 autoload -Uz compinit && compinit && source <(kubectl completion zsh)
 
 #### mktouch is a little commands to created dir with file if dir doesn't exist
@@ -35,33 +45,6 @@ plugins=(
 alias ll='ls -l'
 alias k='kubectl'
 alias tf='terraform'
-
-EOF
-```
-
-### Creating the `.zprofile`file with customised looking for the terminal
-```
-cp ~/.zprofile ~/.zprofile.backup; cat << 'EOF' | tee ~/.zprofile
-# vim: ft=sh
-
-# No brainer, default to Vim
-export EDITOR="vim"
-
-# Color LS output to differentiate between directories and files
-export LS_OPTIONS="--color=auto"
-export CLICOLOR="Yes"
-export LSCOLORS="GxFxCxDxBxegedabagaced"
-
-# Customize Path
-export PATH=$HOME/bin:$PATH
-
-# TEST prompt 
-# print -P '%B%F{208}%b%f 🐺 %F{#C0C0C0}%~%f $(parse_git_branch)%(!.#.%B%F{#FFFFFF}$%b%f) '
-
-setopt PROMPT_SUBST
-bindkey -e # reverse-i-search (crt + r)
-PS1='%B%F{208}%b%f 🐺 %F{014}%~%f $(parse_git_branch)%(!.#.%B%F{015}$%b%f) '
-EOF
 ```
 ### Download my custumised `my-agnoster.zsh-theme` 
 ```

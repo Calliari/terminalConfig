@@ -72,4 +72,8 @@ sh -c "$(curl -fsL https://raw.githubusercontent.com/Calliari/terminalConfig/mas
 ```
 sed -i -e s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"my-agnoster\"/g ~/.zshrc
 ```
+### Reload the terminal 
+```
+source ~/.zshrc
+```
 

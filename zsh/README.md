@@ -19,11 +19,11 @@ brew install tmux
 2)Terminal Preferences "profile"
 
 Configuring the seze of the screen. (Click terminal top left corner and select preferences > settings > window) OR just press 'cmd' + ',' a new tab will open.
- 2.1 Select the style "Pro" press default to select the style
- 2.2 Text Tab   - Font -> "Monaco 12" or try to select one of the "powerlines" fonts available
- 2.3 Window tab - click "Path" tick box, window size -> Columns:260 rows:60
- 2.4 Shell tab  - when the shell exits: "Close if the shell exited cleanly"
- 2.5
+ - 2.1 Select the style "Pro" press default to select the style
+ - 2.2 Text Tab   - Font -> "Monaco 12" or try to select one of the "powerlines" fonts available
+ - 2.3 Window tab - click "Path" tick box, window size -> Columns:260 rows:60
+ - 2.4 Shell tab  - when the shell exits: "Close if the shell exited cleanly"
+ - 2.5
 
 See the picture bellow and select as it is displayed:
 ![Terminal_png](https://github.com/Calliari/terminalConfig/blob/master/zsh/img/Terminal.png)

@@ -98,6 +98,13 @@ brew install jq
 jq --version
 ```
 
+
+#### Installaton xz (https://formulae.brew.sh/formula/xz)
+```
+brew install xz
+xz -V
+```
+
 #### Installaton vagrant for Virtual machines
 ```
 brew install --cask vagrant
